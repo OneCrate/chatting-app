@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting Application</title>
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+</head>
+<div class="login-form">
+<body style="background-color:#5555dd">
+<h1>Login</h1>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<form action="/login" method="POST">
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <p></p>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit">Login</button>
+    <p>Don't have an account? <a href="/signup">Sign up</a></p>
+</form>
+</body>
+</div>
+</html>

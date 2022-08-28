@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting Application</title>
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+</head>
+<div class="signup-form">
+<body style="background-color:light-blue">
+    <h1>Sign Up</h1>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }}. Go to <a href="/login">login page</a>.
+        </div>
+    {% endif %}
+{% endwith %}
+<form action="/signup" method="POST">
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <p></p>
+    <input type="password" placeholder="Create Password" name="password" required>
+
+    <button type="submit">Sign up</button>
+    <p>Already have an account? <a style="color:black text-decoration: underline" href="/login">Login</a></p>
+</form>
+</body>
+</div>
+</html>
