@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/base.css">
+        <div>{% block head_link %}{% endblock %}</div>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div class="topnav">
+            {% if login %}
+                <a href="/login">Login</a>
+                <a href="/signup">SignUp</a>
+            {% endif %}
+            {% if chat %}
+                <a href="/">Home</a>
+                <a href="/logout">Logout</a>
+            {% endif %}
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

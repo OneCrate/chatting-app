@@ -1,0 +1,16 @@
+#tab-container{
+  position: fixed;
+  top: 5.7%;
+  left: 0;
+  background-color: #201e1e;
+  width: 10%;
+  height: 100%;
+}
+
+a{
+  cursor: pointer;
+}
+
+#tab-container a{
+  background-color: white;
+}
